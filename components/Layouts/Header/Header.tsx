@@ -7,6 +7,7 @@ import logo from  "@/public/logo.png";
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import { SlArrowDown } from "react-icons/sl";
+import LangDropdown from "./LangDropdown";
 const HeaderWrapper = styled.header`
   width: 100%;
   padding:32px 0;
@@ -60,6 +61,7 @@ const RightActions = styled.div`
   display: flex;
   margin-right: 100px;
   justify-content: flex-end;
+  align-content: center;
   gap: 1rem;
   font-family: ${montserrat.style.fontFamily};
 `;
@@ -81,26 +83,7 @@ const Button = styled.button`
     opacity: 0.9;
   }
 `;
-const LangButton = styled.button`
-    align-self: center; 
 
-  background-color: ${({ theme }) => theme.colors.mainColor};
-  color: #fff;
-  min-width: 90px;
-  padding: 1.1rem ;
-  height: 48px;
-  border-radius: 28px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  letter-spacing: 1px;
-    display: flex;
-    justify-content: center;
-  align-items: center;
-  &:hover {
-    opacity: 0.9;
-  }
-`;
 const WpIconWrapper = styled.span`
     width: 40px;
     height: 40px;
@@ -114,17 +97,7 @@ const WpIconWrapper = styled.span`
     padding: 0.2rem;
     border-radius: 50%;
 `;
-const LangArrow = styled.span`
-  margin-left: 0.5rem;
 
-   font-size: 16px;
-   line-height: 1;
-   font-weight: 200;
-  display: flex;
-  align-items: center;
-    justify-content: center;
-
-`;
 const HeaderPadding = styled.div`
   height: 100px; // Header hündürlüyü qədər boşluq
   @media (max-width: 768px) {
@@ -162,7 +135,7 @@ export default function Header() {
 
             <Col xs={12} md={4} xxl={4}>
                 <RightActions>
-                <LangButton> Eng <LangArrow> <SlArrowDown /></LangArrow></LangButton>
+                <LangDropdown />
                 <Button><WpIconWrapper><FaWhatsapp /></WpIconWrapper> Bizimlə əlaqə saxla</Button>
                 </RightActions>
 
