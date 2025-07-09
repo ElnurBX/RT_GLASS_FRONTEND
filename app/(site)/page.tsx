@@ -1,24 +1,24 @@
 "use client";
 import AboutUsComponent from "@/components/site/Home/AboutUsConponent";
+import ContactUsComponent from "@/components/site/Home/ContactUsComponent";
 import FAQComponent from "@/components/site/Home/FAQComponents";
 import HeroBanner from "@/components/site/Home/HeroBanner";
+import ServicesBanner from "@/components/site/Home/ServicesBanner";
+import ServicesCarusel from "@/components/site/Home/ServicesCarusel";
 import Testimonials from "@/components/site/Home/Testimonials";
-import Test from "@/components/site/test/test";
-import styled from "styled-components";
+// import Test from "@/components/site/test/test";
 
-const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 100px;
-`;
+
 
 export default function HomePage() {
   return <main>
     <HeroBanner />
     <AboutUsComponent />
     <Testimonials />
+    <ServicesBanner />
+    <ServicesCarusel/>
+    <ContactUsComponent/>
     <FAQComponent  />
-    <Test/>
+  
   </main>;
 }

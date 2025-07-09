@@ -13,6 +13,7 @@ declare module 'styled-components' {
       secondaryText?: string; 
       starColor?: string;
       white?: string; 
+      contactUsComponent?: string;
     };
   }
 }
@@ -28,5 +29,6 @@ export const theme: DefaultTheme = {
     secondaryText: "#1EAC82",
     starColor: "#34A583", 
     white: "#FFFFFF", 
+    contactUsComponent: "#144B3B",
   },
 };

@@ -1,4 +1,4 @@
-import { Montserrat, Roboto, Inter } from "next/font/google";
+import { Montserrat, Roboto, Inter , Poppins} from "next/font/google";
 
 // Montserrat — əsas font kimi
 export const montserrat = Montserrat({
@@ -18,5 +18,11 @@ export const roboto = Roboto({
 export const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "600"],
+  display: "swap",
+});
+export const poppins = Poppins({
+  subsets: ["latin"],
+  style: ["normal"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });

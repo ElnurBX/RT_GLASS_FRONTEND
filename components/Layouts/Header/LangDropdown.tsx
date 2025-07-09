@@ -28,13 +28,13 @@ const ToggleButton = styled.button`
   }
 `;
 
-const DropdownContainer = styled.div<{ isOpen: boolean }>`
+const DropdownContainer = styled.div<{ $isOpen: boolean }>`
   position: absolute;
   top: 4px;
   right: 0;
   background-color: ${({ theme }) => theme.colors.mainColor};
   border-radius: 24px;
-  height: ${({ isOpen }) => (isOpen ? "112px" : "44px")};
+  height: ${({ $isOpen }) => ($isOpen ? "112px" : "44px")};
   display: flex;
   flex-direction: column;
   z-index: 1001;
@@ -44,7 +44,7 @@ const DropdownContainer = styled.div<{ isOpen: boolean }>`
   transition: height 0.5s ease-in-out;
 `;
 
-const Item = styled.button<{ isOpen?: boolean }>`
+const Item = styled.button<{ $isOpen?: boolean }>`
   background-color: ${({ theme }) => theme.colors.mainColor};
   color: #fff;
   width: 100%;
@@ -58,8 +58,8 @@ const Item = styled.button<{ isOpen?: boolean }>`
   justify-content: flex-start;
   cursor: pointer;
   transition: opacity 0.3s;
-  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-  pointer-events: ${({ isOpen }) => (isOpen ? "auto" : "none")};
+  opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+  pointer-events: ${({ $isOpen }) => ($isOpen ? "auto" : "none")};
 
   &:hover {
     opacity: 0.9;
@@ -75,15 +75,15 @@ const LangArrow = styled.span`
   height: 16px;
 `;
 
-const ArrowIcon = styled.span<{ visible: boolean }>`
+const ArrowIcon = styled.span<{ $visible: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity: ${({ visible }) => (visible ? 1 : 0)};
-  transform: ${({ visible }) =>
-    visible ? "translateY(0)" : "translateY(6px)"};
-  visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
+  opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+  transform: ${({ $visible }) =>
+    $visible ? "translateY(0)" : "translateY(6px)"};
+  visibility: ${({ $visible }) => ($visible ? "visible" : "hidden")};
 `;
 
 const LangDropdown = () => {
@@ -114,14 +114,14 @@ const LangDropdown = () => {
 
   return (
     <Wrapper ref={wrapperRef}>
-      <DropdownContainer isOpen={isOpen}>
+      <DropdownContainer $isOpen={isOpen}>
         <ToggleButton onClick={toggleDropdown}>
           {selectedLang}
           <LangArrow>
-            <ArrowIcon visible={isOpen}>
+            <ArrowIcon $visible={isOpen}>
               <SlArrowUp />
             </ArrowIcon>
-            <ArrowIcon visible={!isOpen}>
+            <ArrowIcon $visible={!isOpen}>
               <SlArrowDown />
             </ArrowIcon>
           </LangArrow>
@@ -132,7 +132,7 @@ const LangDropdown = () => {
           .map((lang) => (
             <Item
               key={lang}
-              isOpen={isOpen}
+              $isOpen={isOpen}
               onClick={() => handleSelect(lang)}
             >
               {lang}
