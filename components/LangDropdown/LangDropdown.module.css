@@ -1,0 +1,93 @@
+.wrapper {
+  position: relative;
+}
+
+.dropdownContainer {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  background-color: #184D3E;
+  border-radius: 24px;
+  z-index: 1001;
+  min-width: 90px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+  height: 44px;
+}
+
+.dropdownContainer.open {
+  height: 112px;
+}
+
+.toggleButton {
+  align-self: center;
+  background-color: #184D3E;
+  color: #fff;
+  min-width: 90px;
+  padding: 14px;
+  height: 44px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.toggleButton:hover {
+  opacity: 0.9;
+}
+
+.item {
+  background-color: #184D3E;
+  color: #fff;
+  width: 100%;
+  padding: 0 20px 12px;
+  height: 32px;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.item.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.langArrow {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.arrowIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.arrowIcon.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}

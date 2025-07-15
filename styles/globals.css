@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌐 Global CSS Variables */
+:root {
+  /* 🎨 Colors */
+  --primary: #0070f3;
+  --secondary: #ff4081;
+  --text: #333;
+  --main-color: #184D3E;
+  --black: #151411;
+  --secondary-text: #1EAC82;
+  --star-color: #34A583;
+  --white: #FFFFFF;
+  --contact-us-component: #144B3B;
+
+  /* 🅰️ Fonts */
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* 🔄 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌍 Base Body */
+body {
+  background-color: var(--white);
+  color: var(--text);
+  font-family: var(--font-montserrat);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
